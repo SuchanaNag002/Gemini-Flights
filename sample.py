@@ -5,11 +5,11 @@ from vertexai.preview import generative_models
 from vertexai.preview.generative_models import GenerativeModel, Tool, Part, Content, ChatSession
 from services.flight_manager import search_flights
 
-# Set up Google Cloud credentials
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "services.json"
+# Access secrets
+google_cloud_credentials = st.secrets["google_cloud"]
 
-project = "geminiexplorer-421303"
-vertexai.init(project=project)
+#initialize project
+vertexai.init(project=google_cloud_credentials["project_id"])
 
 # Define Tool
 get_search_flights = generative_models.FunctionDeclaration(
