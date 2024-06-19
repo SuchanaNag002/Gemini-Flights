@@ -9,7 +9,9 @@ from services.flight_manager import search_flights
 google_cloud_credentials = st.secrets["google_cloud"]
 
 #initialize project
-vertexai.init(project=google_cloud_credentials["project_id"])
+project = google_cloud_credentials["project_id"]
+print(project)
+vertexai.init(project=project)
 
 # Define Tool
 get_search_flights = generative_models.FunctionDeclaration(
