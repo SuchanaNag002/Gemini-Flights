@@ -48,7 +48,7 @@ config = generative_models.GenerationConfig(temperature=0.4)
 
 # Load model with config
 model = GenerativeModel(
-    "gemini-pro",
+    "gemini-1.5-flash-001",
     tools=[search_tool],
     generation_config=config
 )
