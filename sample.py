@@ -8,7 +8,7 @@ from services.flight_manager import search_flights
 #initialize project
 project = st.secrets["project_id"]
 print(project)
-vertexai.init(project=project)
+vertexai.init(project=project, location="us-central1")
 
 # Define Tool
 get_search_flights = generative_models.FunctionDeclaration(
