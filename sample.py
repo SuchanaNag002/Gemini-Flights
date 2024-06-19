@@ -1,8 +1,12 @@
 import vertexai
 import streamlit as st
+import os
 from vertexai.preview import generative_models
 from vertexai.preview.generative_models import GenerativeModel, Tool, Part, Content, ChatSession
 from services.flight_manager import search_flights
+
+# Set up Google Cloud credentials
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "services.json"
 
 project = "geminiexplorer-421303"
 vertexai.init(project=project)
