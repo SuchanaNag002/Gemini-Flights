@@ -1,15 +1,12 @@
 import vertexai
 import streamlit as st
-import os
 from vertexai.preview import generative_models
 from vertexai.preview.generative_models import GenerativeModel, Tool, Part, Content, ChatSession
 from services.flight_manager import search_flights
 
-# Access secrets
-google_cloud_credentials = st.secrets["google_cloud"]
 
 #initialize project
-project = google_cloud_credentials["project_id"]
+project = st.secrets["project_id"]
 print(project)
 vertexai.init(project=project)
 
